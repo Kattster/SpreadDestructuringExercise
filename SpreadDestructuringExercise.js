@@ -34,9 +34,8 @@ const amazonPrimeMovies = {
 
 // 2c. Create another const variable called streamingMovies. Using spread, set the value for streamingMovies to an object with the key value pairs in the netflixMovies and amazonPrimeMovies objects as well as the following key value pair (key: "musical" value: "Hamilton"). Also, spread the netflixMovies and amazonPrimeMovies in the order that will set the value for the "action" key to "Extraction"
 const streamingMovies = {
-    ...netflixMovies,
     ...amazonPrimeMovies,
-    action: "Extraction",
+    ...netflixMovies,
     musical: "Hamilton"
 };
 // 2d. Console log the value of the streamingMovies variable
@@ -51,18 +50,19 @@ const disneyJunior = [
 const [mickey, spidey] = disneyJunior
 
 // 3c. Using a single console log, display the values of both the mickey and spidey variables in terminal
-console.log(disneyJunior);
+// console.log(disneyJunior);
+console.log(mickey, spidey);
 
 // 4a. Create another const variable called "avengers" and set the value to an object with the following key value pairs (key: "warMachine" value: "James Rhodes") & (key: "theHulk" value: "Bruce Banner")
 const avengers = {
     warMachine: "James Rhodes",
     theHulk: "Bruce Banner"
-}
+};
 // 4b. Using destructuring, create variables with each key value pair. Have the key be the variable name and the value be the value from the key value pair.
-const {warMachine:Rhodes, theHulk:Banner} = avengers
+const {warMachine, theHulk} = avengers
 
 // 4c. Using a single console log, display the values of the two new variables in terminal
-console.log(avengers);
+console.log(warMachine, theHulk);
 
 // 4d. Create another const variable called "moreAvengers" and set the value to an object with the following key value pairs (key: "blackWidow" value: "Natasha Romanoff"), (key: "hawkeye" value: "Clint Barton"), & (key: "ironMan" value: "Tony Stark").
 const moreAvengers ={
@@ -72,7 +72,7 @@ const moreAvengers ={
 }
 
 // 4e. Using destructuring again, create brand new variable names for the values in the moreAvengers object. For the "Natasha Romanoff" string value use "nat" for the variable name and for the REST of the key value pairs use "others" for the variable name.
-const {nat, ...others} = moreAvengers
+const {blackWidow:nat, ...others} = moreAvengers
 
 // 4f. Using a single console log, display the values of the two new variables in terminal
 console.log(moreAvengers);
@@ -85,10 +85,25 @@ const bonus = {
 };
 
 // 5a. Create a const variable named "all" and use the "bonus" object as well as spread to set the value of the "all" variable to an array with numbers 1 through 9 as the items (Example: [1, 2, 3, 4, 5, 6, 7, 8, 9])
-const all = [...first, ...second, ...third];
+// const {first,second,third} =all
+// const all= {first, second, third};
+// const all=[...first,...second,...third];
+// console.log(all);
+
+// const all= 
+// [...bonus.first, bonus.second, bonus.third];
+
+const all= [
+    ...bonus.first, 
+    ...bonus.second, 
+    ...bonus.third
+];
 console.log(all);
 
 
 // 5b. Create a variable for each of the nine numbers in the "bonus" object and set the number as the value for that using the spelled out name of each number as the variable name (Example: const one = 1, const two = 2, etc.). Also, must use destructuring to complete this.
 
-
+// const [one, two, three, four, five, six, seven, eight, nine] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const [one, two, three, four, five, six, seven, eight, nine] = all;
+console.log(one, two, three, four, five, six, seven, eight, nine);
+console.log(all);
